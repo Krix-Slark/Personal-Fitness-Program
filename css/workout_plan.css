@@ -63,3 +63,14 @@
     object-fit:cover;
     border-radius:10px;
 }
+
+/* Default card shadow (optional, can match your current shadow-lg) */
+.card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* smooth effect */
+}
+
+/* Hover effect */
+.card:hover {
+    box-shadow: 0 0 10px 5px limegreen; /* lime glow */
+    transform: translateY(-5px); /* optional lift effect */
+}
