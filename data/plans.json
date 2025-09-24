@@ -1,0 +1,348 @@
+{
+  "days": [
+    {
+      "day": 1,
+      "title": "Day 1 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "3 × 12",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 12" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "shoulder-press",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "3 × 12",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 12" },
+            { "title": "Intensity", "value": "Medium" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "lat-pulldown",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "3 × 12",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 12" },
+            { "title": "Intensity", "value": "Medium" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "squat",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "3 × 12",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 12" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-85% max HR" }
+          ]
+        },
+        {
+          "id": "plank",
+          "name": "Plank",
+          "video": "../video/plank.webm",
+          "sets": "2 x 30 sec",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60-70% max HR",
+          "description": "The plank is a core strengthening exercise that targets the abdominal muscles, lower back, and shoulders. It helps improve stability, posture, and overall core strength.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "2 x 30 sec" },
+            { "title": "Intensity", "value": "Low" },
+            { "title": "Heart Rate", "value": "60-70% max HR" }
+          ]
+        },
+        {
+          "id": "battle-rope",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "3 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15 sec" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-90% max HR" }
+          ]
+        },
+        {
+          "id": "treadmill",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60-70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            { "title": "Time", "value": "10 mins" },
+            { "title": "Intensity", "value": "Low" },
+            { "title": "Heart Rate", "value": "60-70% max HR" }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Proper Form: Focus on maintaining proper form to prevent injuries and maximize effectiveness.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 2,
+      "title": "Day 2 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day2",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "3 × 15",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "shoulder-press-day2",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "3 × 15",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "Medium" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day2",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "3 × 15",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "Medium" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "squat-day2",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "3 × 15",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-85% max HR" }
+          ]
+        },
+        {
+          "id": "plank-day2",
+          "name": "Plank",
+          "video": "../video/plank.webm",
+          "sets": "2 x 30 sec",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60-70% max HR",
+          "description": "The plank is a core strengthening exercise that targets the abdominal muscles, lower back, and shoulders. It helps improve stability, posture, and overall core strength.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "2 x 30 sec" },
+            { "title": "Intensity", "value": "Low" },
+            { "title": "Heart Rate", "value": "60-70% max HR" }
+          ]
+        },
+        {
+          "id": "battle-rope-day2",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "3 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15 sec" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-90% max HR" }
+          ]
+        },
+        {
+          "id": "treadmill-day2",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60-70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            { "title": "Time", "value": "10 mins" },
+            { "title": "Intensity", "value": "Low" },
+            { "title": "Heart Rate", "value": "60-70% max HR" }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Proper Form: Focus on maintaining proper form to prevent injuries and maximize effectiveness.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 4,
+      "title": "Day 4 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day4",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "4 × 12",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "shoulder-press-day4",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "4 × 12",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "Medium" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day4",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "4 × 12",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-80% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "Medium" },
+            { "title": "Heart Rate", "value": "70-80% max HR" }
+          ]
+        },
+        {
+          "id": "squat-day4",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "4 × 12",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-85% max HR" }
+          ]
+        },
+        {
+          "id": "plank-day4",
+          "name": "Plank",
+          "video": "../video/plank.webm",
+          "sets": "3 x 30 sec",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60-70% max HR",
+          "description": "The plank is a core strengthening exercise that targets the abdominal muscles, lower back, and shoulders. It helps improve stability, posture, and overall core strength.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "2 x 30 sec" },
+            { "title": "Intensity", "value": "Low" },
+            { "title": "Heart Rate", "value": "60-70% max HR" }
+          ]
+        },
+        {
+          "id": "battle-rope-day4",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "3 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            { "title": "Sets x Reps", "value": "3 x 15 sec" },
+            { "title": "Intensity", "value": "High" },
+            { "title": "Heart Rate", "value": "70-90% max HR" }
+          ]
+        },
+        {
+          "id": "treadmill-day4",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60-70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            { "title": "Time", "value": "10 mins" },
+            { "title": "Intensity", "value": "Low" },
+            { "title": "Heart Rate", "value": "60-70% max HR" }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Proper Form: Focus on maintaining proper form to prevent injuries and maximize effectiveness.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    }
+  ] 
+
+  
+}
