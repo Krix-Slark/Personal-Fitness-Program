@@ -13,7 +13,7 @@
             { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "3 × 12" }
           ],
           "details_link": "../Detail_Plan/index.html?day=1",
-          "cardio_link": "../Detail_Plan/index.html?day=1#cardio"
+          "start_link": "../Detail_Plan/index.html?day=1"
         },
         {
           "day": 2,
