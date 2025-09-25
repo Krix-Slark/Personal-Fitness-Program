@@ -1,0 +1,144 @@
+{
+  "weeks": [
+    {
+      "week": 1,
+      "days": [
+        {
+          "day": 1,
+          "duration": "45 mins",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "3 × 12" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "3 × 12" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "3 × 12" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "3 × 12" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=1",
+          "cardio_link": "../Detail_Plan/index.html?day=1#cardio"
+        },
+        {
+          "day": 2,
+          "duration": "45 mins",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "3 × 15" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "3 × 15" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "3 × 15" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "3 × 15" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=2",
+          "cardio_link": "#"
+        },
+        {
+          "day": 3,
+          "rest": true,
+          "description": "Rest Day. Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) around 10–20 mins"
+        },
+        {
+          "day": 4,
+          "duration": "45 mins",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 12" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 12" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 12" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 12" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=4",
+          "cardio_link": "#"
+        },
+        {
+          "day": 5,
+          "duration": "45 mins",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 15" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 15" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 15" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 15" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=5",
+          "cardio_link": "#"
+        },
+        {
+          "day": 6,
+          "rest": true,
+          "description": "Rest Day. Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) around 10–20 mins"
+        },
+        {
+          "day": 7,
+          "rest": true,
+          "description": "Rest Day. Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) around 10–20 mins"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "days": [
+        {
+          "day": 8,
+          "duration": "45 mins",
+          "summaryText": "5 sets: 6 reps per exercise",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm"},
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm"},
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm"},
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"}
+          ],
+          "details_link": "../Detail_Plan/index.html?day=8",
+          "cardio_link": "#"
+        },
+        {
+          "day": 9,
+          "duration": "45 mins",
+          "summaryText": "5 sets: 12 reps per exercise",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 15" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 15" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 15" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 15" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=9",
+          "cardio_link": "#"
+        },
+        {
+          "day": 10,
+          "rest": true,
+          "description": "Rest Day. Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) around 10–20 mins"
+        },
+        {
+          "day": 11,
+          "duration": "45 mins",
+          "summaryText": "6 sets: 12 reps per exercise",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "5 × 12" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "5 × 12" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "5 × 12" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "5 × 12" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=11",
+          "cardio_link": "#"
+        },
+        {
+          "day": 12,
+          "duration": "45 mins",
+          "summaryText": "6 sets: 15 reps per exercise",
+          "exercises": [
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "6 × 12" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "6 × 12" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "6 × 12" },
+            { "name": "Thigh", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "6 × 12" }
+          ],
+          "details_link": "../Detail_Plan/index.html?day=12",
+          "cardio_link": "#"
+        },
+        {
+          "day": 13,
+          "rest": true,
+          "description": "Rest Day. Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) around 10–20 mins"
+        },
+        {
+          "day": 14,
+          "rest": true,
+          "description": "Rest Day. Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) around 10–20 mins"
+        }
+      ]
+    }
+  ]
+}

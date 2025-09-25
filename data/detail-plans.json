@@ -719,6 +719,438 @@
       "type": "rest",
       "title": "Rest Day - Day 6 & 7",
       "message": "Can do a little bit of low intensity Cardio ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins..."
+    },
+    {
+      "day": 8,
+      "title": "Day 8 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day8",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "5 sets × 6 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "6 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day8",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "5 sets × 6 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "6 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day8",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "5 sets × 6 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "6 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "squat-day8",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "5 sets × 6 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "6 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 9,
+      "title": "Day 9 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day9",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day9",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day9",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "squat-day9",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 10,
+      "type": "rest",
+      "title": "Rest Day - Day 10",
+      "message": "Can do a little bit of low intensity Cardio ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins..."
+    },
+    {
+      "day": 11,
+      "title": "Day 11 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day11",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day11",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day11",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "squat-day11",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 12,
+      "title": "Day 12 Workout Plan",
+      "duration": "Around 45 mins",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day12",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "6 sets × 15 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day12",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "6 sets × 15 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day12",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "6 sets × 15 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "squat-day12",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "6 sets × 15 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 13,
+      "type": "rest",
+      "title": "Rest Day - Day 13 & 14",
+      "message": "Can do a little bit of low intensity Cardio ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins..."
     }
   ]
 }

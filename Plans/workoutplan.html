@@ -2,897 +2,249 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout | Plan</title>
-    <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/workout_plan.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout | Plan</title>
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/workout_plan.css">
 </head>
 
-<body class="vh-100">
-    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success">
-        <a href="#" class="navbar-brand" style="color: lime;">
-            <i class="fas fa-dumbbell me-3 ms-4" style="color: lime;"></i>FitChallenge
-        </a>
-        <button class="navbar-toggler bg-success me-3" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav gap-3 mx-auto">
-                <li class="nav-items">
-                    <a href="../index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-items">
-                    <a href="workoutplan.html" class="nav-link">Workout Plan</a>
-                </li>
-                <li class="nav-items">
-                    <a href="nutritionplan.html" class="nav-link">Nutrition Plan</a>
-                </li>
-            </ul>
+<body class="vh-100 bg-dark text-white">
 
-            <div class=" text-decoration-none">
-                <a href="#" class="btn btn-success me-4 text-black"
-                    style="background-color: lime !important; font-weight: 500; font-size: 18px;">Cardio Challenge</a>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success">
+    <a href="#" class="navbar-brand" style="color: lime;">
+      <i class="fas fa-dumbbell me-3 ms-4" style="color: lime;"></i>FitChallenge
+    </a>
+    <button class="navbar-toggler bg-success me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav gap-3 mx-auto">
+        <li class="nav-items"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-items"><a href="workoutplan.html" class="nav-link">Workout Plan</a></li>
+        <li class="nav-items"><a href="nutritionplan.html" class="nav-link">Nutrition Plan</a></li>
+      </ul>
+      <div class="text-decoration-none">
+        <a href="#" class="btn btn-success me-4 text-black"
+          style="background-color: lime !important; font-weight: 500; font-size: 18px;">Cardio Challenge</a>
+      </div>
     </div>
-    <div class="container-fluid text-center vh-150 pt-5" style="background:rgba(0, 0, 0, 0.9);">
-        <h1 class="pt-5 text-white fw-bold fs-1">30-Day <span style="color: lime;">Workout Challenge</span></h1>
-        <p class="mt-3 text-white-50 fs-4 w-75 mx-auto">Transform your body with our progressive strength and cardio
-            program.
-            <br> Each day builds on the last for maximum results.
-        </p>
-        <!-- Week 1 start -->
+  </div>
+
+  <!-- Page Header -->
+  <div class="container-fluid p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+    <div class="container text-center pt-5 mt-5">
+      <h1 class="pt-5 fw-bold fs-1">30-Day <span style="color: lime;">Workout Challenge</span></h1>
+      <p class="mt-3 text-white-50 fs-4 w-75 mx-auto">
+        Transform your body with our progressive strength and cardio program.<br>
+        Each day builds on the last for maximum results.
+      </p>
+    </div>
+
+    <!-- Workout Container (dynamic content will load here) -->
+    <div class="container-fluid" id="workoutContainer"></div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div class="text-center my-5 d-none" id="loadingSpinner">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- JS Scripts -->
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const workoutContainer = document.getElementById("workoutContainer");
+      const loadingSpinner = document.getElementById("loadingSpinner");
+
+      try {
+        const res = await fetch("../data/workout-plan.json");
+        if (!res.ok) throw new Error(`Failed to load JSON: ${res.status}`);
+        const json = await res.json();
+        const weeks = json.weeks || [];
+        let currentWeek = 1;
+
+        function renderWeek(weekNum) {
+          const week = weeks.find(w => w.week === weekNum);
+          if (!week) return;
+
+          loadingSpinner.classList.remove("d-none");
+
+          let html = `
         <div class="mt-5 border-bottom border-success w-25 mx-auto">
-            <h1 class="text-center fw-bold" style="color: limegreen; font-size: 3rem;">Week 1</h1>
+          <h1 class="text-center fw-bold" style="color: limegreen; font-size: 3rem;">
+            Week ${weekNum}
+          </h1>
         </div>
-        <div class="container-fluid row mt-5 d-flex justify-content-center align-items-center">
-            <!-- Card 1 | Day 1 -->
+        <div class="container-fluid row mt-5 d-flex justify-content-center align-items-center">`;
+
+          // iterate days; use for loop to be able to look ahead
+          for (let i = 0; i < week.days.length; i++) {
+            const day = week.days[i];
+
+            // if flagged as skipped (merged by prior rest) skip it
+            if (day.skip) continue;
+
+            // REST days: merge consecutive rest days into one card (e.g. "Day 13 & 14")
+            if (day.rest) {
+              let title = `Day ${day.day}`;
+              if (week.days[i + 1] && week.days[i + 1].rest) {
+                title = `Day ${day.day} & ${week.days[i + 1].day}`;
+                week.days[i + 1].skip = true; // don't render the next rest day separately
+              }
+
+              html += `
             <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark  ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 1 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <div class="card bg-dark" style="width:100%;height:400px;">
+                <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">${title}</h1>
+                <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day
+                   <i class="fas fa-face-smile text-white-50 ms-3"></i>
+                </p>
+                <p class="text-center mx-auto text-white-50 mt-2">
+                   Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) 10–20 mins
+                </p>
+              </div>
+            </div>`;
+              continue;
+            }
 
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
+            // NORMAL workout card: top section with small images/badges
+            const exTopHTML = (day.exercises || []).map(ex => `
+          <div class="text-center">
+            <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">
+              ${ex.name}
+            </span>
+            <img src="${ex.image || ''}" alt="${ex.name}" class="img-fluid rounded">
+          </div>`).join("");
 
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
+            // Video / sets area:
+            let videoSection = "";
+            // Week 2 special layout: two videos, plus icon, two videos, arrow, sets summary
+            if (weekNum === 2) {
+              const top = (day.exercises || []).slice(0, 2);
+              const bottom = (day.exercises || []).slice(2, 4);
 
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
+              const topHTML = top.map(ex => `
+            <div class="video-container">
+              <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">${ex.name}</span>
+              <video muted playsinline style="width:120px; border-radius:8px;">
+                <source src="${ex.video || ''}" type="video/webm">
+              </video>
+            </div>`).join("");
 
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
+              const bottomHTML = bottom.map(ex => `
+            <div class="video-container">
+              <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">${ex.name}</span>
+              <video muted playsinline style="width:120px; border-radius:8px;">
+                <source src="${ex.video || ''}" type="video/webm">
+              </video>
+            </div>`).join("");
 
-                        </div>
-                    </div>
+              const summaryText = day.summaryText || "";
 
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/bench-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Bench Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 × 12</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Shoulder Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 × 12</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/lat-pulldown.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Lat Pulldown</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 × 12</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Squat</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 × 12</span>
-                        </div>
-                    </div>
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html?day=1" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="../Detail_Plan/index.html?day=1#cardio" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2 | Day 2 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 2 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/bench-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Bench Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 x 15</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Shoulder Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 x 15</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/lat-pulldown.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Lat Pulldown</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 x 15</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Squat</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">3 x 15</span>
-                        </div>
-                    </div>
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html?day=2" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 | Day 3 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card bg-dark  " style="width: 100%; height: 400px;">
-                    <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">Day 3</h1>
-                    <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day <i
-                            class="fas fa-face-smile text-white-50 ms-3"></i></p>
-                    <p class="text-center mx-auto text-white-50 mt-2">Can do a little bit of low intensity Cardio
-                        ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins</p>
-                </div>
-            </div>
-            <!-- Card 4 | Day 4 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark shadow-lg ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 4 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/bench-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Bench Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 12</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Shoulder Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 12</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/lat-pulldown.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Lat Pulldown</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 12</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Squat</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 12</span>
-                        </div>
-                    </div>
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html?day=4" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
+              videoSection = `
+            <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
+              ${topHTML}
             </div>
 
-            <!-- Card 5 | Day 5-->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 5 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/bench-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Bench Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 15</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Shoulder Press</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 15</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/lat-pulldown.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Lat Pulldown</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 15</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                            <span class="fw-bold text-white fs-5">Squat</span>
-                        </div>
-                        <div class="text-white me-4 fs-5">
-                            <span style="color:lime;">4 x 15</span>
-                        </div>
-                    </div>
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html?day=5" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 6 | Day 6 & 7 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card bg-dark " style="width: 100%; height: 400px;">
-                    <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">Day 6 & 7</h1>
-                    <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day <i
-                            class="fas fa-face-smile text-white-50 ms-3"></i></p>
-                    <p class="text-center mx-auto text-white-50 mt-2">Can do a little bit of low intensity Cardio
-                        ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins</p>
-                </div>
-            </div>
-        </div>
-        <!-- Week 1 end -->
-        <!-- Week 2 start -->
-        <div class="mt-5 border-bottom border-success w-25 mx-auto">
-            <h1 class="text-center fw-bold" style="color: limegreen; font-size: 3rem;">Week 2</h1>
-        </div>
-        <div class="container-fluid row mt-5 d-flex justify-content-center align-items-center">
-            <!-- Card 1 | Day 8 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 8 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Video Previews -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Bench Press</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/bench-press.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Shoulder
-                                Press</span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-
-                    <div class="text-center">
-                        <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <!-- Video Preview -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Lat
-                                    Pulldown</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/lat-pulldown.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Squat
-                            </span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-                    <div class="text-center">
-                        <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="text-white fs-5 py-2">
-                            <span style="color:lime;">5 sets: 6 reps per exercise
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Card2 | Day 9 -->
-             <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 9 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Video Previews -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Bench Press</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/bench-press.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Shoulder
-                                Press</span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-
-                    <div class="text-center">
-                        <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <!-- Video Preview -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Lat
-                                    Pulldown</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/lat-pulldown.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Squat
-                            </span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-                    <div class="text-center">
-                        <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="text-white fs-5 py-2">
-                            <span style="color:lime;">5 sets: 12 reps per exercise
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center">
+              <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
             </div>
 
-            <!-- Card 3 | Day 10 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card bg-dark " style="width: 100%; height: 400px;">
-                    <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">Day 10</h1>
-                    <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day <i
-                            class="fas fa-face-smile text-white-50 ms-3"></i></p>
-                    <p class="text-center mx-auto text-white-50 mt-2">Can do a little bit of low intensity Cardio
-                        ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins</p>
-                </div>
-            </div>
-            <!-- Card 4 | Day 11 -->
-             <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 11 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Video Previews -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Bench Press</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/bench-press.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Shoulder
-                                Press</span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-
-                    <div class="text-center">
-                        <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <!-- Video Preview -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Lat
-                                    Pulldown</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/lat-pulldown.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Squat
-                            </span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-                    <div class="text-center">
-                        <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="text-white fs-5 py-2">
-                            <span style="color:lime;">5 sets: 15 reps per exercise
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
+            <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
+              ${bottomHTML}
             </div>
 
-            <!-- Card 5 | Day 12-->
-             <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100 bg-dark ">
-                    <div class="card-body d-flex justify-content-between ">
-                        <h1 class="fs-2 text-start" style="color: lime;">Day 12 <br> <span class="text-black badge">
-                                <i class="fas fa-dumbbell text-dark me-2"></i> 4 exercises </span></h1>
-                        <span class="text-white-50 pt-1"><i class="fas fa-clock  me-2"
-                                style="color: lime;"></i>45mins</span>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; width:80px;">
-                                    Chest
-                                </span>
-                                <img src="../images/Chest.jpg" alt="Chest Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Back</span>
-                                <img src="../images/Back.jpg" alt="Back Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Shoulder</span>
-                                <img src="../images/Shoulder.jpg" alt="Shoulder Muscle" class="img-fluid rounded">
-                            </div>
-
-                            <div class="text-center">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Thigh</span>
-                                <img src="../images/Thigh.jpg" alt="Thigh Muscle" class="img-fluid rounded">
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Video Previews -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1"
-                                    style="background-color: limegreen; color:black; ">Bench Press</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/bench-press.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Shoulder
-                                Press</span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/shoulder-press.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-
-                    <div class="text-center">
-                        <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <!-- Video Preview -->
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="d-flex align-items-center gap-3 ms-3">
-                            <div class="video-container">
-                                <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Lat
-                                    Pulldown</span>
-                                <video muted playsinline style="width:120px; border-radius:8px;">
-                                    <source src="../video/lat-pulldown.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <span class="badge d-block mb-1" style="background-color: limegreen; color:black; ">Squat
-                            </span>
-                            <video muted playsinline style="width:120px; border-radius:8px;">
-                                <source src="../video/squat.webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
-                    <!-- end previews -->
-                    <div class="text-center">
-                        <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-                        <div class="text-white fs-5 py-2">
-                            <span style="color:lime;">6 sets: 12 reps per exercise
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="button-container mt-4 d-flex justify-content-around mb-3 ">
-                        <a href="../Detail_Plan/index.html" class="btn btn-dark shadow-lg border-light ms-5"><i
-                                class="fas fa-info-circle me-2"></i>Details</a>
-                        <a href="#" class="btn btn-success me-5 px-3"><i class="fas fa-play me-2"></i>Cardio
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center">
+              <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
             </div>
+            <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
+              <div class="text-white fs-5 py-2">
+                <span style="color:lime;">${summaryText}</span>
+              </div>
+            </div>`;
+            } else {
+              // Default layout (Week 1 etc): render each exercise as its own video row with sets
+              videoSection = (day.exercises || []).map(ex => `
+            <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
+              <div class="d-flex align-items-center gap-3 ms-3">
+                <video muted playsinline style="width:120px; border-radius:8px;">
+                  <source src="${ex.video || ''}" type="video/webm">
+                </video>
+                <span class="fw-bold text-white fs-5">${ex.name}</span>
+              </div>
+              <div class="text-white me-4 fs-5">
+                <span style="color:lime;">${ex.sets_reps || ex.sets || ""}</span>
+              </div>
+            </div>`).join("");
+            }
 
-            <!-- Card 6 | Day 13 & 14 -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card bg-dark " style="width: 100%; height: 400px;">
-                    <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">Day 13 & 14</h1>
-                    <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day <i
-                            class="fas fa-face-smile text-white-50 ms-3"></i></p>
-                    <p class="text-center mx-auto text-white-50 mt-2">Can do a little bit of low intensity Cardio
-                        ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins</p>
+            // assemble card
+            html += `
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 bg-dark">
+              <div class="card-body d-flex justify-content-between">
+                <h1 class="fs-2 text-start" style="color: lime;">
+                  Day ${day.day} <br>
+                  <span class="text-black badge">
+                    <i class="fas fa-dumbbell text-dark me-2"></i> ${(day.exercises || []).length} exercises
+                  </span>
+                </h1>
+                <span class="text-white-50 pt-1">
+                  <i class="fas fa-clock me-2" style="color: lime;"></i>${day.duration || ""}
+                </span>
+              </div>
+
+              <div class="card-body pt-0">
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                  ${exTopHTML}
                 </div>
+              </div>
+
+              ${videoSection}
+
+              <div class="button-container mt-4 d-flex justify-content-around mb-3">
+                <a href="${day.details_link || ('../Detail_Plan/index.html?day=' + day.day)}" class="btn btn-dark shadow-lg border-light">
+                  <i class="fas fa-info-circle me-2"></i>Details
+                </a>
+                <a href="${day.cardio_link || '#'}" class="btn btn-success px-3">
+                  <i class="fas fa-play me-2"></i>Cardio
+                </a>
+              </div>
             </div>
+          </div>`;
+          } // end for days
 
-            <!-- Week 2 end -->
-        </div>
+          html += "</div>"; // close week container
+          workoutContainer.insertAdjacentHTML("beforeend", html);
+          loadingSpinner.classList.add("d-none");
+        }
 
+        // Initial load
+        renderWeek(currentWeek);
+
+        // infinite scroll
+        window.addEventListener("scroll", () => {
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+            if (currentWeek < weeks.length) {
+              currentWeek++;
+              renderWeek(currentWeek);
+            }
+          }
+        });
+
+      } catch (err) {
+        console.error(err);
+        loadingSpinner.classList.add("d-none");
+        workoutContainer.insertAdjacentHTML("beforeend", `<p class="text-center text-danger mt-4">Could not load workout data.</p>`);
+      }
+    });
+  </script>
 </body>
-<script src="../public/js/bootstrap.bundle.min.js"></script>
 
 </html>
