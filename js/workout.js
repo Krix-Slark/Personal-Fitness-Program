@@ -2,56 +2,76 @@ document.addEventListener("DOMContentLoaded", async () => {
     const params = new URLSearchParams(window.location.search);
     const dayNum = parseInt(params.get("day")) || 1;
 
+    // load data
     const res = await fetch("../data/plans.json");
     const data = await res.json();
+
     const dayData = data.days.find(d => d.day === dayNum);
-    if (!dayData) return console.error("Day not found");
-
-   if (dayData.type === 'rest') {
-    document.querySelector(".title h1").textContent = dayData.title;
-    document.querySelector(".title span").textContent = "";
-
-    // Hide navbar prev/next buttons
-    const navPrev = document.getElementById('prev-day');
-    const navNext = document.getElementById('next-day');
-    if (navPrev) navPrev.style.display = 'none';
-    if (navNext) navNext.style.display = 'none';
-
-    const container = document.querySelector(".container-fluid");
-    container.outerHTML = `
-    <div class="w-100 vh-100 d-flex flex-column justify-content-center align-items-center text-center bg-dark text-white p-4">
-        <h1 class="display-4 mb-3" style="color:lime;">Rest Day 😊</h1>
-        <p class="lead text-white-50 mb-4">
-            ${dayData.message || 'Take a break and let your muscles recover.'}
-        </p>
-
-        <a href="../Plans/workoutplan.html" class="btn btn-outline-success px-4 py-2 mt-2">
-            Back to Plan
-        </a>
-    </div>
-    `;
-    // no return — script can continue for other setups
-}
-
-
-
-    document.querySelector(".title h1").textContent = dayData.title;
-    document.querySelector(".title span").innerHTML = `${dayData.exercises.length} exercises  <i class="fas fa-clock ms-3 me-2"></i>${dayData.duration}`;
-
-    const lastActive = localStorage.getItem('activeExercise');
-    if (lastActive && !dayData.exercises.some(ex => ex.id === lastActive)) {
-        localStorage.removeItem('activeExercise');
+    if (!dayData) {
+        console.error("Day not found:", dayNum);
+        return;
     }
 
+    // Rest day handling (replace page and stop further rendering)
+    if (dayData.type === 'rest') {
+        const titleH1 = document.querySelector(".title h1");
+        const titleSpan = document.querySelector(".title span");
+        if (titleH1) titleH1.textContent = dayData.title;
+        if (titleSpan) titleSpan.textContent = "";
+
+        const navPrev = document.getElementById('prev-day');
+        const navNext = document.getElementById('next-day');
+        if (navPrev) navPrev.style.display = 'none';
+        if (navNext) navNext.style.display = 'none';
+
+        const container = document.querySelector(".container-fluid");
+        if (container) {
+            container.outerHTML = `
+            <div class="w-100 vh-100 d-flex flex-column justify-content-center align-items-center text-center bg-dark text-white p-4">
+                <h1 class="display-4 mb-3" style="color:lime;">Rest Day 😊</h1>
+                <p class="lead text-white-50 mb-4">
+                    ${dayData.message || 'Take a break and let your muscles recover.'}
+                </p>
+
+                <a href="../Plans/workoutplan.html" class="btn btn-outline-success px-4 py-2 mt-2">
+                    Back to Plan
+                </a>
+            </div>
+            `;
+        }
+        return; // stop — rest page doesn't need exercise rendering
+    }
+
+    // Title & summary
+    const titleH1 = document.querySelector(".title h1");
+    const titleSpan = document.querySelector(".title span");
+    if (titleH1) titleH1.textContent = dayData.title;
+    if (titleSpan) titleSpan.innerHTML = `${dayData.exercises.length} exercises  <i class="fas fa-clock ms-3 me-2"></i>${dayData.duration}`;
+
+    // Per-day storage key
+    const storageKey = `activeExercise-day-${dayNum}`;
+
+    // Remove saved item if it doesn't belong to this day's exercises
+    const lastActive = localStorage.getItem(storageKey);
+    if (lastActive && !dayData.exercises.some(ex => ex.id === lastActive)) {
+        localStorage.removeItem(storageKey);
+    }
+
+    // Sidebar and main elements
     const sidebar = document.getElementById("exercise-sidebar");
     const main = document.getElementById("exercise-main");
+    if (!sidebar || !main) {
+        console.error("Missing DOM targets: exercise-sidebar or exercise-main");
+        return;
+    }
 
-    // Render sidebar
+    // Render sidebar (exercise list) + tips
     sidebar.innerHTML =
         dayData.exercises.map(ex => {
+            const intensity = (ex.intensity || '').toLowerCase();
             let badgeClass = 'bg-success';
-            if (ex.intensity.toLowerCase() === 'medium') badgeClass = 'bg-warning';
-            if (ex.intensity.toLowerCase() === 'high') badgeClass = 'bg-danger';
+            if (intensity === 'medium') badgeClass = 'bg-warning';
+            if (intensity === 'high') badgeClass = 'bg-danger';
             return `
         <div class="exercise-card d-flex align-items-center justify-content-between mt-3 p-3 rounded bg-dark" data-exercise="${ex.id}">
             <div class="d-flex align-items-center gap-3 ms-3">
@@ -67,21 +87,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <span style="color:lime;">${ex.sets}</span>
             </div>
         </div>`;
-        }).join('') // <- close the join
-        + // <- append the tips box as a string
+        }).join('') +
         `
     <div class="suggestion-box mt-4 p-3 rounded bg-dark text-white-50">
         <h5 class="fw-bold text-white mb-2">
             <i class="fas fa-lightbulb me-2" style="color: lime;"></i>
             After-Workout Tips
         </h5>
-        <p>${dayData.tips.replace(/\n/g, '<br>')}</p>
+        <p>${(dayData.tips || '').replace(/\n/g, '<br>')}</p>
     </div>
     `;
 
-
-
-    // Render main content
+    // Render main content (details)
     main.innerHTML = dayData.exercises.map(ex => `
         <div class="exercise-content text-center mt-5 d-none" data-exercise="${ex.id}">
             <video autoplay loop muted playsinline style="width:350px; border-radius:8px;">
@@ -103,39 +120,40 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
         </div>`).join("");
 
-    const cards = document.querySelectorAll('.exercise-card');
-    const contents = document.querySelectorAll('.exercise-content');
-    let activeExercise = localStorage.getItem('activeExercise') || cards[0].dataset.exercise;
+    // Query rendered DOM for cards/contents
+    const cards = sidebar.querySelectorAll('.exercise-card');
+    const contents = main.querySelectorAll('.exercise-content');
+
+    // Determine active exercise: prefer per-day saved value, fall back to first card
+    const saved = localStorage.getItem(storageKey);
+    const initial = saved || (cards.length ? cards[0].dataset.exercise : null);
+    let activeExercise = initial;
 
     function setActiveExercise(id) {
+        if (!id) return;
         cards.forEach(c => c.classList.toggle('active', c.dataset.exercise === id));
         contents.forEach(c => c.classList.toggle('d-none', c.dataset.exercise !== id));
-        localStorage.setItem('activeExercise', id);
+        localStorage.setItem(storageKey, id);
     }
 
-    setActiveExercise(activeExercise);
+    if (activeExercise) setActiveExercise(activeExercise);
 
     cards.forEach(card => {
         card.addEventListener('click', () => setActiveExercise(card.dataset.exercise));
     });
 
+    /* ----------  Next / Previous Day (safe) ---------- */
+    // Build sorted list of day numbers
+    const sortedDays = data.days.map(d => d.day).sort((a, b) => a - b);
+    const currentIndex = sortedDays.indexOf(dayNum);
 
-    // ----- Next day button -----
     const nextBtn = document.getElementById('next-day');
     if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
             e.preventDefault();
-
-            // Find the next existing day in JSON
-            let nextDay = dayNum + 1;
-            while (!data.days.some(d => d.day === nextDay)) {
-                nextDay++;
-            }
-
-            // If nextDay exists, go to it
-            const nextDayData = data.days.find(d => d.day === nextDay);
-            if (nextDayData) {
-                window.location.href = `index.html?day=${nextDay}`;
+            const nextDayNumber = (currentIndex >= 0 && currentIndex < sortedDays.length - 1) ? sortedDays[currentIndex + 1] : null;
+            if (nextDayNumber) {
+                window.location.href = `index.html?day=${nextDayNumber}`;
             } else {
                 alert("You have completed all the days!");
             }
@@ -146,22 +164,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (prevBtn) {
         prevBtn.addEventListener('click', (e) => {
             e.preventDefault();
-
-            // Find the previous existing day in JSON
-            let prevDay = dayNum - 1;
-            while (!data.days.some(d => d.day === prevDay) && prevDay > 0) {
-                prevDay--;
-            }
-
-            const prevDayData = data.days.find(d => d.day === prevDay);
-            if (prevDayData) {
-                window.location.href = `index.html?day=${prevDay}`;
+            const prevDayNumber = (currentIndex > 0) ? sortedDays[currentIndex - 1] : null;
+            if (prevDayNumber) {
+                window.location.href = `index.html?day=${prevDayNumber}`;
             } else {
                 // No previous day exists, go back to dashboard
                 window.location.href = '../Plans/workoutplan.html';
             }
         });
     }
-
-
 });
+
