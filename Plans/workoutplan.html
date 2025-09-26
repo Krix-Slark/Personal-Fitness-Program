@@ -124,8 +124,8 @@
 
             // Video / sets area:
             let videoSection = "";
-            // Week 2 special layout: two videos, plus icon, two videos, arrow, sets summary
-            if (weekNum === 2) {
+            // Week 2 - 4 special layout: two videos, plus icon, two videos, arrow, sets summary
+            if (weekNum >= 2 && weekNum <= 4) {
               const top = (day.exercises || []).slice(0, 2);
               const bottom = (day.exercises || []).slice(2, 4);
 
