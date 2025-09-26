@@ -48,7 +48,7 @@
           "day": 5,
           "duration": "45 mins",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 15" },
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 x 15" },
             { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 15" },
             { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 15" },
             { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 15" }
@@ -89,10 +89,10 @@
           "duration": "45 mins",
           "summaryText": "5 sets: 12 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 15" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 15" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 15" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 15" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm" },
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm" }
           ],
           "details_link": "../Detail_Plan/index.html?day=9",
           "cardio_link": "#"
@@ -107,10 +107,10 @@
           "duration": "45 mins",
           "summaryText": "6 sets: 12 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "5 × 12" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "5 × 12" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "5 × 12" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "5 × 12" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm" },
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm" }
           ],
           "details_link": "../Detail_Plan/index.html?day=11",
           "cardio_link": "#"
@@ -120,10 +120,10 @@
           "duration": "45 mins",
           "summaryText": "6 sets: 15 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "6 × 12" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "6 × 12" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "6 × 12" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "6 × 12" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm" },
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm" }
           ],
           "details_link": "../Detail_Plan/index.html?day=12",
           "cardio_link": "#"
@@ -148,9 +148,10 @@
           "duration": "45 mins",
           "summaryText": "5 sets: 15 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm"},
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/incline-press.webm"},
             { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm"},
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm"},
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "reverse-grip row", "video": "../video/reverse-grip-bent-over-row.webm"},
             { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"}
           ],
           "details_link": "../Detail_Plan/index.html?day=15",
@@ -159,12 +160,14 @@
         {
           "day": 16,
           "duration": "45 mins",
-          "summaryText": "5 sets: 12 reps per exercise",
+          "summaryText": "6 sets: 6 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 15" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 15" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 15" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 15" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/incline-press.webm" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm" },
+            { "name": "Upright-row", "video": "../video/upright-row.webm" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "reverse-grip row", "video": "../video/reverse-grip-bent-over-row.webm"},
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm" }
           ],
           "details_link": "../Detail_Plan/index.html?day=16",
           "cardio_link": "#"
@@ -179,23 +182,27 @@
           "duration": "45 mins",
           "summaryText": "6 sets: 12 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "5 × 12" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "5 × 12" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "5 × 12" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "5 × 12" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm"},
+            { "name": "Bent-over row", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"},
+            { "name": "Romanian-deadlift", "video": "../video/romanian-deadlift.webm" }
           ],
           "details_link": "../Detail_Plan/index.html?day=18",
-          "cardio_link": "#"
+          "cardio_link": "#"  
         },
         {
           "day": 19,
           "duration": "45 mins",
           "summaryText": "6 sets: 15 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "6 × 12" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "6 × 12" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "6 × 12" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "6 × 12" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm" },
+            { "name": "Incline-press", "video": "../video/incline-press.webm" },
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm" },
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm"},
+            { "name": "Bent-over row", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"}
           ],
           "details_link": "../Detail_Plan/index.html?day=19",
           "cardio_link": "#"
@@ -218,12 +225,15 @@
         {
           "day": 22,
           "duration": "45 mins",
-          "summaryText": "5 sets: 6 reps per exercise",
+          "summaryText": "5 sets: 12 reps per exercise",
           "exercises": [
             { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm"},
+            { "name": "Incline-press", "video": "../video/incline-press.webm" },
             { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm"},
+            { "name": "Upright-row", "video": "../video/upright-row.webm"},
             { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm"},
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"}
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"},
+            { "name": "Romanian-deadlift", "video": "../video/romanian-deadlift.webm"}
           ],
           "details_link": "../Detail_Plan/index.html?day=22",
           "cardio_link": "#"
@@ -231,12 +241,15 @@
         {
           "day": 23,
           "duration": "45 mins",
-          "summaryText": "5 sets: 12 reps per exercise",
+          "summaryText": "5 sets: 15 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "4 × 15" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "4 × 15" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "4 × 15" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "4 × 15" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm"},
+            { "name": "Incline-press", "video": "../video/incline-press.webm"},
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm"},
+            { "name": "Upright-row", "video": "../video/upright-row.webm"},
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "reverse-grip row", "video": "../video/reverse-grip-bent-over-row.webm"},
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"}
           ],
           "details_link": "../Detail_Plan/index.html?day=23",
           "cardio_link": "#"
@@ -251,10 +264,14 @@
           "duration": "45 mins",
           "summaryText": "6 sets: 12 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "5 × 12" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "5 × 12" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "5 × 12" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "5 × 12" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm"},
+            { "name": "Incline-press", "video": "../video/incline-press.webm"},
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm"},
+            { "name": "Upright-row", "video": "../video/upright-row.webm"},
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "reverse-grip row", "video": "../video/reverse-grip-bent-over-row.webm"},
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"},
+            { "name": "Romanian-deadlift", "video": "../video/romanian-deadlift.webm"}
           ],
           "details_link": "../Detail_Plan/index.html?day=25",
           "cardio_link": "#"
@@ -262,12 +279,16 @@
         {
           "day":26,
           "duration": "45 mins",
-          "summaryText": "6 sets: 15 reps per exercise",
+          "summaryText": "6 sets: 12 reps per exercise",
           "exercises": [
-            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm", "sets_reps": "6 × 12" },
-            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm", "sets_reps": "6 × 12" },
-            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/lat-pulldown.webm", "sets_reps": "6 × 12" },
-            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm", "sets_reps": "6 × 12" }
+            { "name": "Chest", "image": "../images/Chest.jpg", "video": "../video/bench-press.webm"},
+            { "name": "Incline-press", "video": "../video/incline-press.webm"},
+            { "name": "Shoulder", "image": "../images/Shoulder.jpg", "video": "../video/shoulder-press.webm"},
+            { "name": "Upright-row", "video": "../video/upright-row.webm"},
+            { "name": "Back", "image": "../images/Back.jpg", "video": "../video/barbell-push-bent-over-row.webm"},
+            { "name": "reverse-grip row", "video": "../video/reverse-grip-bent-over-row.webm"},
+            { "name": "Leg", "image": "../images/Thigh.jpg", "video": "../video/squat.webm"},
+            { "name": "Romanian-deadlift", "video": "../video/romanian-deadlift.webm"}
           ],
           "details_link": "../Detail_Plan/index.html?day=26",
           "cardio_link": "#"

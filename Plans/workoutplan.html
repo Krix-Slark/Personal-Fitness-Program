@@ -37,7 +37,7 @@
   <!-- Page Header -->
   <div class="container-fluid p-0" style="background-color: rgba(0, 0, 0, 0.4);">
     <div class="container text-center pt-5 mt-5">
-      <h1 class="pt-5 fw-bold fs-1">30-Day <span style="color: lime;">Workout Challenge</span></h1>
+      <h1 class="pt-5 fw-bold fs-1">28-Day <span style="color: lime;">Workout Challenge</span></h1>
       <p class="mt-3 text-white-50 fs-4 w-75 mx-auto">
         Transform your body with our progressive strength and cardio program.<br>
         Each day builds on the last for maximum results.
@@ -76,151 +76,148 @@
           loadingSpinner.classList.remove("d-none");
 
           let html = `
-        <div class="mt-5 border-bottom border-success w-25 mx-auto">
-          <h1 class="text-center fw-bold" style="color: limegreen; font-size: 3rem;">
-            Week ${weekNum}
-          </h1>
-        </div>
-        <div class="container-fluid row mt-5 d-flex justify-content-center align-items-center">`;
+          <div class="mt-5 border-bottom border-success w-25 mx-auto">
+            <h1 class="text-center fw-bold" style="color: limegreen; font-size: 3rem;">
+              Week ${weekNum}
+            </h1>
+          </div>
+          <div class="container-fluid row mt-5 d-flex justify-content-center align-items-center">`;
 
-          // iterate days; use for loop to be able to look ahead
-          for (let i = 0; i < week.days.length; i++) {
-            const day = week.days[i];
+          week.days.forEach((day, i) => {
+            if (day.skip) return;
 
-            // if flagged as skipped (merged by prior rest) skip it
-            if (day.skip) continue;
-
-            // REST days: merge consecutive rest days into one card (e.g. "Day 13 & 14")
+            // REST day handling
             if (day.rest) {
               let title = `Day ${day.day}`;
               if (week.days[i + 1] && week.days[i + 1].rest) {
                 title = `Day ${day.day} & ${week.days[i + 1].day}`;
-                week.days[i + 1].skip = true; // don't render the next rest day separately
+                week.days[i + 1].skip = true;
+              }
+              html += `
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card bg-dark" style="width:100%;height:400px;">
+                  <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">${title}</h1>
+                  <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day
+                     <i class="fas fa-face-smile text-white-50 ms-3"></i>
+                  </p>
+                  <p class="text-center mx-auto text-white-50 mt-2">
+                     ${day.description || ""}
+                  </p>
+                </div>
+              </div>`;
+              return;
+            }
+
+            // Top badges/images (only exercises with image)
+            const seenTopEx = new Set();
+            const exTopHTML = (day.exercises || []).filter(ex => ex.image && !seenTopEx.has(ex.name))
+              .slice(0, 4)
+              .map(ex => {
+                seenTopEx.add(ex.name);
+                return `
+                <div class="text-center">
+                  <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">
+                    ${ex.name}
+                  </span>
+                  <img src="${ex.image}" alt="${ex.name}" class="img-fluid rounded">
+                </div>`;
+              }).join("");
+
+            let videoSection = "";
+
+            // Week 1 old UI
+            if (weekNum === 1) {
+              videoSection = (day.exercises || []).map(ex => `
+              <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
+                <div class="d-flex align-items-center gap-3 ms-3">
+                  <video muted playsinline style="width:120px; border-radius:8px;">
+                    <source src="${ex.video || ''}" type="video/webm">
+                  </video>
+                  <span class="fw-bold text-white fs-5">${ex.name || ""}</span>
+                </div>
+                <div class="text-white me-4 fs-5">
+                  <span style="color:lime;">${ex.sets_reps || ex.sets || ""}</span>
+                </div>
+              </div>`).join("");
+            } else {
+              // Week 2-4 new UI
+              const seenVideos = new Set();
+              const exs = (day.exercises || []).filter(ex => {
+                const name = ex.name?.trim().toLowerCase() || "";
+                if (seenVideos.has(name) && ex.video) return false;
+                seenVideos.add(name);
+                return true;
+              });
+
+              const rows = [];
+              for (let j = 0; j < exs.length; j += 2) {
+                const pair = exs.slice(j, j + 2).map(ex => `
+                  <div class="video-container">
+                    <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">${ex.name || ""}</span>
+                    <video muted playsinline style="width:120px; border-radius:8px;">
+                      <source src="${ex.video || ''}" type="video/webm">
+                    </video>
+                  </div>
+                `).join("");
+
+                rows.push(`
+                  <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
+                    ${pair}
+                  </div>
+                `);
               }
 
-              html += `
-            <div class="col-12 col-md-4 mb-4">
-              <div class="card bg-dark" style="width:100%;height:400px;">
-                <h1 class="fs-1 fw-bold mx-auto pt-5 mb-5" style="color: limegreen;">${title}</h1>
-                <p class="text-center mx-auto fs-1 text-white-50 mt-4">Rest Day
-                   <i class="fas fa-face-smile text-white-50 ms-3"></i>
-                </p>
-                <p class="text-center mx-auto text-white-50 mt-2">
-                   Can do a little bit of low intensity Cardio (cycling, treadmill, Cross Trainer) 10–20 mins
-                </p>
+              videoSection = rows.join(`
+                <div class="text-center">
+                  <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
+                </div>
+              `) + `
+              <div class="text-center">
+                <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
               </div>
-            </div>`;
-              continue;
+              <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
+                <div class="text-white fs-5 py-2">
+                  <span style="color:lime;">${day.summaryText || ""}</span>
+                </div>
+              </div>`;
             }
 
-            // NORMAL workout card: top section with small images/badges
-            const exTopHTML = (day.exercises || []).map(ex => `
-          <div class="text-center">
-            <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">
-              ${ex.name}
-            </span>
-            <img src="${ex.image || ''}" alt="${ex.name}" class="img-fluid rounded">
-          </div>`).join("");
-
-            // Video / sets area:
-            let videoSection = "";
-            // Week 2 - 4 special layout: two videos, plus icon, two videos, arrow, sets summary
-            if (weekNum >= 2 && weekNum <= 4) {
-              const top = (day.exercises || []).slice(0, 2);
-              const bottom = (day.exercises || []).slice(2, 4);
-
-              const topHTML = top.map(ex => `
-            <div class="video-container">
-              <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">${ex.name}</span>
-              <video muted playsinline style="width:120px; border-radius:8px;">
-                <source src="${ex.video || ''}" type="video/webm">
-              </video>
-            </div>`).join("");
-
-              const bottomHTML = bottom.map(ex => `
-            <div class="video-container">
-              <span class="badge d-block mb-1" style="background-color: limegreen; color:black;">${ex.name}</span>
-              <video muted playsinline style="width:120px; border-radius:8px;">
-                <source src="${ex.video || ''}" type="video/webm">
-              </video>
-            </div>`).join("");
-
-              const summaryText = day.summaryText || "";
-
-              videoSection = `
-            <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-              ${topHTML}
-            </div>
-
-            <div class="text-center">
-              <i class="fas fa-plus fs-3 pt-3 ms-2" style="color: lime;"></i>
-            </div>
-
-            <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-              ${bottomHTML}
-            </div>
-
-            <div class="text-center">
-              <i class="fas fa-arrow-down fs-3 pt-3 ms-2" style="color: lime;"></i>
-            </div>
-            <div class="d-flex align-items-center justify-content-around mt-3 bg-dark shadow-lg">
-              <div class="text-white fs-5 py-2">
-                <span style="color:lime;">${summaryText}</span>
-              </div>
-            </div>`;
-            } else {
-              // Default layout (Week 1 etc): render each exercise as its own video row with sets
-              videoSection = (day.exercises || []).map(ex => `
-            <div class="d-flex align-items-center justify-content-between mt-3 bg-dark shadow-lg">
-              <div class="d-flex align-items-center gap-3 ms-3">
-                <video muted playsinline style="width:120px; border-radius:8px;">
-                  <source src="${ex.video || ''}" type="video/webm">
-                </video>
-                <span class="fw-bold text-white fs-5">${ex.name}</span>
-              </div>
-              <div class="text-white me-4 fs-5">
-                <span style="color:lime;">${ex.sets_reps || ex.sets || ""}</span>
-              </div>
-            </div>`).join("");
-            }
-
-            // assemble card
             html += `
-          <div class="col-12 col-md-4 mb-4">
-            <div class="card h-100 bg-dark">
-              <div class="card-body d-flex justify-content-between">
-                <h1 class="fs-2 text-start" style="color: lime;">
-                  Day ${day.day} <br>
-                  <span class="text-black badge">
-                    <i class="fas fa-dumbbell text-dark me-2"></i> ${(day.exercises || []).length} exercises
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card h-100 bg-dark">
+                <div class="card-body d-flex justify-content-between">
+                  <h1 class="fs-2 text-start" style="color: lime;">
+                    Day ${day.day} <br>
+                    <span class="text-black badge">
+                      <i class="fas fa-dumbbell text-dark me-2"></i> ${(day.exercises || []).length} exercises
+                    </span>
+                  </h1>
+                  <span class="text-white-50 pt-1">
+                    <i class="fas fa-clock me-2" style="color: lime;"></i>${day.duration || ""}
                   </span>
-                </h1>
-                <span class="text-white-50 pt-1">
-                  <i class="fas fa-clock me-2" style="color: lime;"></i>${day.duration || ""}
-                </span>
-              </div>
+                </div>
 
-              <div class="card-body pt-0">
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                  ${exTopHTML}
+                <div class="card-body pt-0">
+                  <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    ${exTopHTML}
+                  </div>
+                </div>
+
+                ${videoSection}
+
+                <div class="button-container mt-4 d-flex justify-content-around mb-3">
+                  <a href="${day.details_link || ('../Detail_Plan/index.html?day=' + day.day)}" class="btn btn-dark shadow-lg border-light">
+                    <i class="fas fa-info-circle me-2"></i>Details
+                  </a>
+                  <a href="${day.start_link || '#'}" class="btn btn-success px-3">
+                    <i class="fas fa-play me-2"></i>Start
+                  </a>
                 </div>
               </div>
+            </div>`;
+          });
 
-              ${videoSection}
-
-              <div class="button-container mt-4 d-flex justify-content-around mb-3">
-                <a href="${day.details_link || ('../Detail_Plan/index.html?day=' + day.day)}" class="btn btn-dark shadow-lg border-light">
-                  <i class="fas fa-info-circle me-2"></i>Details
-                </a>
-                <a href="${day.start_link || '#'}" class="btn btn-success px-3">
-                  <i class="fas fa-play me-2"></i>Start
-                </a>
-              </div>
-            </div>
-          </div>`;
-          } // end for days
-
-          html += "</div>"; // close week container
+          html += "</div>";
           workoutContainer.insertAdjacentHTML("beforeend", html);
           loadingSpinner.classList.add("d-none");
         }
@@ -228,7 +225,7 @@
         // Initial load
         renderWeek(currentWeek);
 
-        // infinite scroll
+        // Infinite scroll
         window.addEventListener("scroll", () => {
           if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
             if (currentWeek < weeks.length) {
