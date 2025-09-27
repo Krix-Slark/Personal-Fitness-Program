@@ -14,7 +14,7 @@
 
   <!-- Navbar -->
   <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success">
-    <a href="#" class="navbar-brand" style="color: lime;">
+    <a href="../index.html" class="navbar-brand" style="color: lime;">
       <i class="fas fa-dumbbell me-3 ms-4" style="color: lime;"></i>FitChallenge
     </a>
     <button class="navbar-toggler bg-success me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -46,6 +46,53 @@
 
     <!-- Workout Container (dynamic content will load here) -->
     <div class="container-fluid" id="workoutContainer"></div>
+    <div class="text-center my-4">
+      <a href="#" id="week5Btn" class="btn btn-outline-success px-4 py-2 fs-3 mb-5">
+        Week 5 <i class="fas fa-arrow-right ms-3"></i>
+      </a>
+    </div>
+  </div>
+  <!-- Week 5 Button -->
+
+  <!-- Week 5 Not Available Modal -->
+  <div class="modal fade" id="week5UnavailableModal" tabindex="-1" aria-labelledby="week5UnavailableLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" id="week5UnavailableLabel" style="color:lime;">
+            🚧 Week 5 Not Available
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="lead text-white-50 mb-3">
+            Week 5 is not yet available. Please check back soon!
+          </p>
+          <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 5 Congratulations Modal -->
+  <div class="modal fade" id="week5Modal" tabindex="-1" aria-labelledby="week5ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white text-center">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" id="week5ModalLabel" style="color:lime;">
+            🎉 Congratulations!
+          </h5>
+        </div>
+        <div class="modal-body">
+          <p class="lead text-white-50">
+            You have completed the 1st month of your challenge!
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Loading Spinner -->
@@ -241,6 +288,37 @@
         workoutContainer.insertAdjacentHTML("beforeend", `<p class="text-center text-danger mt-4">Could not load workout data.</p>`);
       }
     });
+    document.addEventListener('DOMContentLoaded', () => {
+  const week5Btn = document.getElementById('week5Btn');
+  if (!week5Btn) return;
+
+  fetch("../data/detail-plans.json")
+    .then(res => res.json())
+    .then(data => {
+      const hasWeek5 = data.days.some(d => d.day > 28); // >28 = week5
+      if (!hasWeek5) {
+        // ✅ Show Bootstrap modal instead of alert
+        week5Btn.addEventListener('click', () => {
+          const modal = new bootstrap.Modal(
+            document.getElementById('week5UnavailableModal')
+          );
+          modal.show();
+        });
+      } else {
+        // Week 5 exists → congratulation modal then redirect
+        week5Btn.addEventListener('click', () => {
+          const modal = new bootstrap.Modal(
+            document.getElementById('week5Modal')
+          );
+          modal.show();
+          setTimeout(() => {
+            window.location.href = "index.html?day=29";
+          }, 3000);
+        });
+      }
+    });
+});
+
   </script>
 </body>
 

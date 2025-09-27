@@ -1844,13 +1844,13 @@
         },
         {
           "id": "leg-day18",
-          "name": "Leg",
+          "name": "Squat",
           "video": "../video/squat.webm",
           "sets": "6 sets × 12 reps",
-          "intensity": "Medium",
-          "intensityBadge": "medium intensity",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
           "heartRate": "80-90% max HR",
-          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
           "meta": [
             {
               "title": "Sets",
@@ -2071,13 +2071,13 @@
         },
         {
           "id": "leg-day19",
-          "name": "Leg",
+          "name": "Squat",
           "video": "../video/squat.webm",
           "sets": "6 sets × 15 reps",
-          "intensity": "Medium",
-          "intensityBadge": "medium intensity",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
           "heartRate": "80-90% max HR",
-          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "description": "The squat is a fundamental exercise for building lower body strength, targeting the quadriceps, hamstrings, and glutes. This compound movement enhances overall leg power, stability, and mobility.",
           "meta": [
             {
               "title": "Sets",
@@ -2151,7 +2151,974 @@
       "type": "rest",
       "title": "Rest Day - Day 20 & 21",
       "message": "Can do a little bit of low intensity Cardio ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins..."
+    },
+    {
+      "day": 22,
+      "title": "Day 22 Workout Plan",
+      "duration": "Around 1 hour",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day22",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "incline-press-day22",
+          "name": "Incline Chest Press",
+          "video": "../video/incline-press.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The incline chest press primarily targets the upper portion of the pectoral muscles while also engaging the shoulders and triceps. Performing the press on an incline bench helps build a fuller, more defined upper chest and improves overall pushing strength for better athletic and everyday performance.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day22",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "upright-row-day22",
+          "name": "Upright Row",
+          "video": "../video/upright-row.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The upright row is a powerful exercise that targets the shoulders and upper back, particularly the deltoids and trapezius muscles. By lifting the barbell or dumbbells close to the body, this movement helps build shoulder width, improve posture, and enhance overall upper-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day22",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "leg-day22",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "romanian-deadlift-day22",
+          "name": "Romanian Deadlift",
+          "video": "../video/romanian-deadlift.webm",
+          "sets": "5 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The Romanian deadlift is an essential movement for building the posterior chain, focusing on the hamstrings, glutes, and lower back. By maintaining a slight knee bend and a strong hip hinge, it strengthens the hips and improves hamstring flexibility, enhancing both athletic power and overall lower-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "battle-rope-day22",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "4 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            {
+              "title": "Sets x Reps",
+              "value": "4 x 15 sec"
+            },
+            {
+              "title": "Intensity",
+              "value": "High"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "treadmill-day22",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60–70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            {
+              "title": "Times",
+              "value": "10 mins"
+            },
+            {
+              "title": "Intensity",
+              "value": "low intensity"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "60–70% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 23,
+      "title": "Day 23 Workout Plan",
+      "duration": "Around 1 hour",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day23",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "incline-press-day23",
+          "name": "Incline Chest Press",
+          "video": "../video/incline-press.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The incline chest press primarily targets the upper portion of the pectoral muscles while also engaging the shoulders and triceps. Performing the press on an incline bench helps build a fuller, more defined upper chest and improves overall pushing strength for better athletic and everyday performance.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day23",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "upright-row-day23",
+          "name": "Upright Row",
+          "video": "../video/upright-row.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The upright row is a powerful exercise that targets the shoulders and upper back, particularly the deltoids and trapezius muscles. By lifting the barbell or dumbbells close to the body, this movement helps build shoulder width, improve posture, and enhance overall upper-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day23",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "reverse-grip-row-day23",
+          "name": "Reverse-grip row",
+          "video": "../video/reverse-grip-bent-over-row.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "leg-day23",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "5 sets × 15 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "5 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "15 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "battle-rope-day23",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "4 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            {
+              "title": "Sets x Reps",
+              "value": "4 x 15 sec"
+            },
+            {
+              "title": "Intensity",
+              "value": "High"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "treadmill-day23",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60–70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            {
+              "title": "Times",
+              "value": "10 mins"
+            },
+            {
+              "title": "Intensity",
+              "value": "low intensity"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "60–70% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+     {
+      "day": 24,
+      "type": "rest",
+      "title": "Rest Day - Day 24",
+      "message": "Can do a little bit of low intensity Cardio ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins..."
+    },
+    {
+      "day": 25,
+      "title": "Day 25 Workout Plan",
+      "duration": "Around 1 hour",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day25",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "incline-press-day25",
+          "name": "Incline Chest Press",
+          "video": "../video/incline-press.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The incline chest press primarily targets the upper portion of the pectoral muscles while also engaging the shoulders and triceps. Performing the press on an incline bench helps build a fuller, more defined upper chest and improves overall pushing strength for better athletic and everyday performance.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day25",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "upright-row-day25",
+          "name": "Upright Row",
+          "video": "../video/upright-row.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The upright row is a powerful exercise that targets the shoulders and upper back, particularly the deltoids and trapezius muscles. By lifting the barbell or dumbbells close to the body, this movement helps build shoulder width, improve posture, and enhance overall upper-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day25",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "reverse-grip-row-day25",
+          "name": "Reverse-grip row",
+          "video": "../video/reverse-grip-bent-over-row.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "leg-day25",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "romanian-deadlift-day25",
+          "name": "Romanian Deadlift",
+          "video": "../video/romanian-deadlift.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The Romanian deadlift is an essential movement for building the posterior chain, focusing on the hamstrings, glutes, and lower back. By maintaining a slight knee bend and a strong hip hinge, it strengthens the hips and improves hamstring flexibility, enhancing both athletic power and overall lower-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "battle-rope-day25",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "4 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            {
+              "title": "Sets x Reps",
+              "value": "4 x 15 sec"
+            },
+            {
+              "title": "Intensity",
+              "value": "High"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "treadmill-day25",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60–70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            {
+              "title": "Times",
+              "value": "10 mins"
+            },
+            {
+              "title": "Intensity",
+              "value": "low intensity"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "60–70% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 26,
+      "title": "Day 26 Workout Plan",
+      "duration": "Around 1 hour",
+      "summary": "4 exercises + cardio exercises",
+      "exercises": [
+        {
+          "id": "bench-press-day26",
+          "name": "Bench Press",
+          "video": "../video/bench-press.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The bench press is the gold standard of upper body strength exercises, targeting the chest, shoulders, and triceps in one powerful compound movement. This fundamental exercise builds pressing power, muscular endurance, and upper body mass when performed with proper technique and progressive overload.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "incline-press-day26",
+          "name": "Incline Chest Press",
+          "video": "../video/incline-press.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "75-90% max HR",
+          "description": "The incline chest press primarily targets the upper portion of the pectoral muscles while also engaging the shoulders and triceps. Performing the press on an incline bench helps build a fuller, more defined upper chest and improves overall pushing strength for better athletic and everyday performance.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "75-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "shoulder-press-day26",
+          "name": "Shoulder Press",
+          "video": "../video/shoulder-press.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The shoulder press is a fundamental exercise for building upper body strength, targeting the deltoids, triceps, and upper chest. This compound movement enhances shoulder stability, promotes muscle growth, and improves overall pressing power.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "upright-row-day26",
+          "name": "Upright Row",
+          "video": "../video/upright-row.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The upright row is a powerful exercise that targets the shoulders and upper back, particularly the deltoids and trapezius muscles. By lifting the barbell or dumbbells close to the body, this movement helps build shoulder width, improve posture, and enhance overall upper-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "lat-pulldown-day26",
+          "name": "Lat Pulldown",
+          "video": "../video/lat-pulldown.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The lat pulldown is an essential exercise for developing upper body strength, particularly targeting the latissimus dorsi muscles in the back. This movement helps improve posture, enhance pulling strength, and build a V-shaped physique.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "reverse-grip-row-day26",
+          "name": "Reverse-grip row",
+          "video": "../video/reverse-grip-bent-over-row.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "Medium",
+          "intensityBadge": "medium intensity",
+          "heartRate": "70-85% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-85% max HR"
+            }
+          ]
+        },
+        {
+          "id": "leg-day26",
+          "name": "Squat",
+          "video": "../video/squat.webm",
+          "sets": "6 sets x 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The reverse-grip bent-over row is an effective compound exercise that targets the lats, rhomboids, and biceps while also engaging the core for stability. Using an underhand grip places greater emphasis on the lower lats and biceps, helping to improve pulling strength, build a thicker back, and enhance overall upper-body posture.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "romanian-deadlift-day26",
+          "name": "Romanian Deadlift",
+          "video": "../video/romanian-deadlift.webm",
+          "sets": "6 sets × 12 reps",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "80-90% max HR",
+          "description": "The Romanian deadlift is an essential movement for building the posterior chain, focusing on the hamstrings, glutes, and lower back. By maintaining a slight knee bend and a strong hip hinge, it strengthens the hips and improves hamstring flexibility, enhancing both athletic power and overall lower-body strength.",
+          "meta": [
+            {
+              "title": "Sets",
+              "value": "6 sets"
+            },
+            {
+              "title": "Reps",
+              "value": "12 reps"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "80-90% max HR"
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "battle-rope-day26",
+          "name": "Battle Rope",
+          "video": "../video/battle_rope.webm",
+          "sets": "4 × 15sec",
+          "intensity": "High",
+          "intensityBadge": "high intensity",
+          "heartRate": "70-90% max HR",
+          "description": "Battle rope exercises are a dynamic way to build strength and endurance. They engage multiple muscle groups, improve cardiovascular fitness, and enhance overall athletic performance.",
+          "meta": [
+            {
+              "title": "Sets x Reps",
+              "value": "4 x 15 sec"
+            },
+            {
+              "title": "Intensity",
+              "value": "High"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "70-90% max HR"
+            }
+          ]
+        },
+        {
+          "id": "treadmill-day26",
+          "name": "Treadmill",
+          "video": "../video/treadmill.webm",
+          "sets": "10 mins",
+          "intensity": "Low",
+          "intensityBadge": "low intensity",
+          "heartRate": "60–70% max HR",
+          "description": "The treadmill is a popular cardio machine that simulates walking or running indoors. It provides a convenient way to improve cardiovascular fitness, burn calories, and enhance lower body strength.",
+          "meta": [
+            {
+              "title": "Times",
+              "value": "10 mins"
+            },
+            {
+              "title": "Intensity",
+              "value": "low intensity"
+            },
+            {
+              "title": "Heart Rate",
+              "value": "60–70% max HR"
+            }
+          ]
+        }
+      ],
+      "tips": "1. Warm-Up and Cool Down: Always start with a 5-10 minute warm-up to prepare your muscles and end with a cool-down to aid recovery.\n\n2. Static Stretching Exercises: After your workout, perform static stretches for each major muscle group—such as \n- chest doorway stretch, \n- shoulder cross-body stretch, \n- seated hamstring stretch, \n- standing quad stretch, and \n- seated back twist—to enhance flexibility and reduce muscle tension.\n\n3. Hydration: Drink plenty of water before, during, and after your workout.\n\n4. Rest: Ensure you get adequate rest between sets and exercises to allow muscle recovery.\n\n5. Nutrition: Fuel your body with a balanced diet rich in protein, carbohydrates, and healthy fats to support your fitness goals."
+    },
+    {
+      "day": 27,
+      "type": "rest",
+      "title": "Rest Day - Day 27 & 28",
+      "message": "Can do a little bit of low intensity Cardio ( like cycling , treadmill, Cross Trainer ) around 10 mins to 20 mins..."
     }
-
   ]
 }

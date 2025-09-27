@@ -124,26 +124,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>`;
     }).join('');
 
-    
+
 
     // --- Cardio cards with unclickable heading ---
-let cardioCardsHTML = '';
-if (cardioList.length > 0) {
-    // Add a heading card (unclickable)
-    cardioCardsHTML += `
+    let cardioCardsHTML = '';
+    if (cardioList.length > 0) {
+        // Add a heading card (unclickable)
+        cardioCardsHTML += `
     <div class="exercise-card mt-4 p-3 rounded bg-dark text-center" style="cursor:default; pointer-events:none; color:lime;">
         <span class="fw-bold text-uppercase" style="letter-spacing:1px;">Cardio</span>
     </div>`;
-    
-    // Add each cardio item
-    cardioCardsHTML += cardioList.map(c => {
-        const intensity = (c.intensity || '').toLowerCase();
-        const badgeClass =
-            intensity === 'medium' ? 'bg-warning' :
-            intensity === 'high'   ? 'bg-danger' :
-                                     'bg-success'; // low or default
 
-        return `
+        // Add each cardio item
+        cardioCardsHTML += cardioList.map(c => {
+            const intensity = (c.intensity || '').toLowerCase();
+            const badgeClass =
+                intensity === 'medium' ? 'bg-warning' :
+                    intensity === 'high' ? 'bg-danger' :
+                        'bg-success'; // low or default
+
+            return `
         <div class="exercise-card d-flex align-items-center justify-content-between mt-3 p-3 rounded bg-dark" data-exercise="${c.id}">
             <div class="d-flex align-items-center gap-3 ms-3">
                 <div class="video-container">
@@ -161,8 +161,8 @@ if (cardioList.length > 0) {
                 <span style="color:lime;">${parseSetsReps(c.sets)}</span>
             </div>
         </div>`;
-    }).join('');
-}
+        }).join('');
+    }
 
 
 
@@ -221,9 +221,15 @@ if (cardioList.length > 0) {
     if (nextBtn) nextBtn.addEventListener('click', e => {
         e.preventDefault();
         const nextDay = sortedDays[currentIndex + 1];
-        if (nextDay) window.location.href = `index.html?day=${nextDay}`;
-        else alert("You have completed all the days!");
+        if (nextDay) {
+            window.location.href = `index.html?day=${nextDay}`;
+        } else {
+            // Show Bootstrap modal instead of alert
+            const modal = new bootstrap.Modal(document.getElementById('completionModal'));
+            modal.show();
+        }
     });
+
 
     const prevBtn = document.getElementById('prev-day');
     if (prevBtn) prevBtn.addEventListener('click', e => {

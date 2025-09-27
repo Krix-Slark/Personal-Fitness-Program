@@ -1,51 +1,78 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detail Workout | FitChallenge</title>
-        <link rel="stylesheet" href="../css/all.min.css">
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/detail_plan.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Workout | FitChallenge</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/detail_plan.css">
+</head>
 
-    <body>
-        <!-- navbar items -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dark">
-            <div class="d-flex justify-content-start">
-                <a href="../Plans/workoutplan.html" class="btn btn-dark py-3 px-3 py-3 ms-4">
-                    Workout Days
-                </a>
-                <span class="text-white-50 mt-3">|</span>
-                <a href="#" id="prev-day" class="btn btn-dark py-3 px-3 py-3" style="color: lime;"><i
-                        class="fas fa-arrow-left fs-5 ms-2 me-2 "></i>Prev </a>
-            </div>
-            <div class="title d-flex flex-column flex-grow-1" style="color: lime;">
-                <h1 class="fs-4 mb-0 ms-4"></h1>
-                <span class="mt-1 text-white-50 ms-4"><i class="fas fa-clock ms-3 me-2"></i></span>
-            </div>
-            <div class="d-flex justify-content-end ms-auto me-4">
-                <a href="#" id="next-day" class="btn btn-dark py-2 px-3">Next<i class="fas fa-arrow-right ms-2"></i></a>
-            </div>
-        </nav>
-        <!-- aside content -->
-        <div class="container-fluid">
-            <div class="row">
-                <aside class="col-12 col-md-4 bg-black vh-150 p-4">
-                    <div id="exercise-sidebar" class="scrollable-exercises mb-3">
-                        <div id="tips" class="p-3 mt-4 text-white-50"></div>
-                    </div>
-                </aside>
-                <main class="col-12 col-md-8 vh-150 " style="background-color: rgba(0, 0, 0, 0.92);">
-                    <div id="exercise-main" class="p-3">
-                        <!-- main exercise content will be injected here by workout.js -->
-                    </div>
-                </main>
+<body>
+    <!-- navbar items -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dark">
+        <div class="d-flex justify-content-start">
+            <a href="../Plans/workoutplan.html" class="btn btn-dark py-3 px-3 py-3 ms-4">
+                Workout Days
+            </a>
+            <span class="text-white-50 mt-3">|</span>
+            <a href="#" id="prev-day" class="btn btn-dark py-3 px-3 py-3" style="color: lime;"><i
+                    class="fas fa-arrow-left fs-5 ms-2 me-2 "></i>Prev </a>
+        </div>
+        <div class="title d-flex flex-column flex-grow-1" style="color: lime;">
+            <h1 class="fs-4 mb-0 ms-4"></h1>
+            <span class="mt-1 text-white-50 ms-4"><i class="fas fa-clock ms-3 me-2"></i></span>
+        </div>
+        <div class="d-flex justify-content-end ms-auto me-4">
+            <a href="#" id="next-day" class="btn btn-dark py-2 px-3">Next<i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </nav>
+    <!-- aside content -->
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-md-4 bg-black vh-150 p-4">
+                <div id="exercise-sidebar" class="scrollable-exercises mb-3">
+                    <div id="tips" class="p-3 mt-4 text-white-50"></div>
+                </div>
+            </aside>
+            <main class="col-12 col-md-8 vh-150 " style="background-color: rgba(0, 0, 0, 0.92);">
+                <div id="exercise-main" class="p-3">
+                    <!-- main exercise content will be injected here by workout.js -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Completion Modal -->
+    <div class="modal fade" id="completionModal" tabindex="-1" aria-labelledby="completionModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="completionModalLabel" style="color:lime;">
+                        🎉 Workout Plan Complete
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="lead text-white-50 mb-4">
+                        You have completed all the workout days! Great job
+                    </p>
+                    <a href="../Plans/workoutplan.html" class="btn btn-outline-success">
+                        Back to Plan
+                    </a>
+                </div>
             </div>
         </div>
-    </body>
-    <script src="../js/detail.js" defer></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    </div>
 
-    </html>
+</body>
+<script src="../js/detail.js" defer></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+   
+</script>
+</html>
