@@ -18,15 +18,21 @@
 
 }
 
+ .nav-link.active {
+  color: lime !important;
+  font-weight: 600;
+}
+
+
 .background_img {
   background-image: url(../images/Gym_background.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height:100vh;
   position:relative;
   /* filter: blur(1px); */
   z-index: 1;
+  padding: 9rem 1rem;
 }
 
 .background_img::after{
@@ -58,4 +64,12 @@
   height: 90px;
   border-radius: 50%;
 
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 25px;
 }

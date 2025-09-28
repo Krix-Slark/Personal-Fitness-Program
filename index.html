@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="vh-100">
+<body class="bg-dark" data-page="home">
     <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success">
         <a href="index.html" class="navbar-brand" style="color: lime;">
             <i class="fas fa-dumbbell me-3 ms-4" style="color: lime;"></i>FitChallenge
@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav gap-3 mx-auto">
                 <li class="nav-items">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-items">
                     <a href="Plans/workoutplan.html" class="nav-link">Workout Plan</a>
@@ -33,7 +33,7 @@
             </ul>
 
             <div class=" text-decoration-none">
-                <a href="#" class="btn btn-success me-4 text-black"
+                <a href="Plans/workoutplan.html" class="btn btn-success me-4 text-black"
                     style="background-color: lime !important; font-weight: 500; font-size: 18px;">Start Challenge</a>
             </div>
         </div>
@@ -45,11 +45,131 @@
             <p class="mt-4 text-white fs-4 w-75 mx-auto">Transform your body with our scientifically designed workout
                 and
                 nutrition program. No gimmicks, just results.</p>
-            <a href="#" class="btn btn-success mt-4 fs-3 px-4 text-black"
+            <a href="Plans/workoutplan.html" class="btn btn-success mt-4 fs-3 px-4 text-black"
                 style="background-color: lime !important; border-radius: 12px;">Let's Start!</a>
         </div>
     </div>
-    <section class="container-fluid bg-dark vh-150 text-center">
+
+
+    <div class="container w-100 p-0  rounded mt-5 mb-5"
+        style="background-color: rgba(0, 0, 0, 0.3); border: 1px solid rgba(128, 128, 128, 0.795);">
+        <div class="col-12">
+            <div class="card-title shadow-lg  overflow-hidden d-flex mx-auto" style="border-bottom: 1px solid white;">
+                <!-- header area -->
+                <div class="d-flex align-items-center p-4 header-gradient">
+                    <div class="icon-box me-4">
+                        <i class="fas fa-user-alt fa-3x p-4"
+                            style="color: gray; border: 2px solid darkgreen; border-radius: 90px;"></i>
+                    </div>
+                    <div>
+                        <h2 class="fw-bold text-white mb-1">Personal Health Dashboard</h2>
+                        <p class="text-white-50 mb-0">Current metrics and personalized nutrition plan</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Body composition -->
+            <h1 class="mt-4 fs-2 fw-bold text-white text-start ms-4 mb-4 ps-3" style="border-left: 6px solid lime;">Body
+                Composition</h1>
+            <div class="container-fluid">
+                <div class="row gap-4 py-5 pt-2 ps-lg-5 ps-sm-5">
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-scale-balanced mt-3 mb-3 fs-4 p-2 rounded" style="color: lime; background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Current Weight</h5>
+                        <h2 class="fw-bold text-center" id="currentWeightKg" style="color: lime"></h2>
+                        <span class="badge text-white-50" id="currentWeightLb"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-bullseye mt-3 mb-3 fs-4 text-info p-2 rounded" style="background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Lean Body Weight</h5>
+                        <h2 class="fw-bold text-center text-info" id="leanBodyWeightKg"></h2>
+                        <span class="badge text-white-50" id="leanBodyWeightLb"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-user mt-3 mb-3 fs-4 text-warning p-2 rounded" style="background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Fat Percent</h5>
+                        <h2 class="fw-bold text-center text-warning mb-4" id="fatPercent"></h2>
+                        <span class="badge text-white-50"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-user mt-3 mb-3 fs-4 text-warning p-2 rounded" style="background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Fat Mass</h5>
+                        <h2 class="fw-bold text-center text-warning" id="fatMassKg"></h2>
+                        <span class="badge text-white-50" id="fatMassLb"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-fire-flame-curved mt-3 mb-3 fs-4 text-danger p-2 rounded" style="background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">BMR</h5>
+                        <h2 class="fw-bold text-center text-danger" id="bmr"></h2>
+                        <span class=" text-white-50">calories</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Body Composition -->
+            <!-- Weight Loss Nutriton Plan -->
+
+            <h1 class="mt-4 fs-2 fw-bold text-white text-start ms-4 ps-3 mb-4" style="border-left: 6px solid darkgreen;">Weight Loss Nutrition Plan</h1>
+            <div class="container-fluid">
+                <div class="row gap-4 py-5 pt-2 ps-lg-5 ps-sm-5 ">
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-arrow-trend-down mt-3 mb-3 fs-4 p-2 rounded" style="color: lime; background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center" >Target Weight</h5>
+                        <h2 class="fw-bold text-center" id="targetWeightKg" style="color: lime"></h2>
+                        <span class="badge text-white-50" id="targetWeightLb"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-fire-flame-curved mt-3 mb-3 fs-4 text-info p-2 rounded" style="background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Daily Calories</h5>
+                        <h2 class="fw-bold text-center mb-4 text-info" id="dailyCalories"></h2>
+                        <span class="badge text-white-50"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-apple-whole mt-3 mb-3 fs-4 p-2 rounded" style="color: lime; background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Carbohydrates</h5>
+                        <h2 class="fw-bold text-center mb-4" id="carbs" style="color: lime;"></h2>
+                        <span class="badge text-white-50"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-utensils mt-3 mb-3 fs-4 p-2 rounded" style="color: blueviolet; background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Protein</h5>
+                        <h2 class="fw-bold text-center mb-4" id="protein" style="color: blueviolet;"></h2>
+                        <span class="badge text-white-50"></span>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-2 col-sm-5 pb-3 d-flex flex-column bg-dark shadow-lg justify-content-center align-items-center rounded">
+                        <i class="fas fa-utensils mt-3 mb-3 fs-4 text-danger p-2 rounded" style="background-color: rgba(99, 98, 98, 0.384);"></i>
+                        <h5 class="text-white-50 text-center">Fat</h5>
+                        <h2 class="fw-bold text-center text-warning mb-4" id="fat"></h2>
+                        <span class=" text-white-50"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Weight Loss nutrition plan -->
+            <div class="text-center mb-4">
+                <span class="text-white-50 p-2 py-3 px-3 rounded" style="background-color: rgba(59, 58, 58, 0.212);"><i class="fas fa-chart-simple me-3" style="color: rgb(50, 99, 205);"></i>Nutrition values are automatically adjusted weekly based on your progress and metabolic adaptation.</span>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="container-fluid vh-150 text-center" style="background-color: rgb(15, 15, 15 , 0.5);">
         <h1 class="pt-5 text-white fw-bold fs-1">Choose Your Path</h1>
         <p class="mt-3 text-white-50 fs-4">Two comprehensive programs designed to work together</p>
         <div class="row mt-3 d-flex justify-content-center align-items-center">
@@ -71,7 +191,7 @@
                     <p class="fs-4 mt-3 text-white-50">28 days of structured nutrition for results</p>
                     <p class="fs-5 mt-2 text-white-50">Balanced meals, hydration, and portion control
                         for weight loss & muscle recovery. Every meal planned to fuel your transformation.</p>
-                    <a href="#" class="btn btn-success mb-3">View 28-Day Nutrition Plan</a>
+                    <a href="Plans/nutritionplan.html" class="btn btn-success mb-3">View 28-Day Nutrition Plan</a>
                 </div>
             </div>
         </div>
@@ -79,10 +199,34 @@
     <footer class="container-fluid py-4 bg-dark shadow-lg ">
         <div class="text-center">
             <p class="text-white-50 mb-3">&copy; 2025 FitChallenge. Transform your body, transform your life.</p>
-            <p class="text-white-50 mb-2">Contact: <a href="https://slark-portfolio.vercel.app/" class="text-decoration-none">slark-fitness</a>| Follow us for Healthy Liftstyle.</p>
+            <p class="text-white-50 mb-2">Contact: <a href="https://slark-portfolio.vercel.app/"
+                    class="text-decoration-none">slark-fitness</a>| Follow us for Healthy Liftstyle.</p>
         </div>
     </footer>
 </body>
+<script>
+fetch('data/metrics.json')
+  .then(r => r.json())
+  .then(metrics => {
+    document.getElementById('currentWeightKg').textContent = metrics.currentWeightKg;
+    document.getElementById('currentWeightLb').textContent = metrics.currentWeightLb;
+    document.getElementById('leanBodyWeightKg').textContent = metrics.leanBodyWeightKg;
+    document.getElementById('leanBodyWeightLb').textContent = metrics.leanBodyWeightLb;
+    document.getElementById('fatPercent').textContent = metrics.fatPercent;
+    document.getElementById('fatMassKg').textContent = metrics.fatMassKg;
+    document.getElementById('fatMassLb').textContent = metrics.fatMassLb;
+    document.getElementById('bmr').textContent = metrics.bmr;
+    document.getElementById('bmr').textContent = metrics.bmr;
+    document.getElementById('targetWeightKg').textContent = metrics.targetWeightKg;
+    document.getElementById('targetWeightLb').textContent = metrics.targetWeightLb;
+    document.getElementById('dailyCalories').textContent = metrics.dailyCalories;
+    document.getElementById('carbs').textContent = metrics.carbs;
+    document.getElementById('protein').textContent = metrics.protein;
+    document.getElementById('fat').textContent = metrics.fat;
+    
+  });
+</script>
+
 <script src="js/bootstrap.bundle.min.js"></script>
 
 </html>

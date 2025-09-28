@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout | Plan</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/workout_plan.css">
+    
+</head>
+
+<body class="vh-100 bg-dark text-white" data-page="nutrition">
+
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-success">
+        <a href="../index.html" class="navbar-brand" style="color: lime;">
+            <i class="fas fa-dumbbell me-3 ms-4" style="color: lime;"></i>FitChallenge
+        </a>
+        <button class="navbar-toggler bg-success me-3" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav gap-3 mx-auto">
+                <li class="nav-items"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-items"><a href="workoutplan.html" class="nav-link">Workout Plan</a></li>
+                <li class="nav-items"><a href="nutritionplan.html" class="nav-link active">Nutrition Plan</a></li>
+            </ul>
+            <div class="text-decoration-none">
+                <a href="#" class="btn btn-success me-4 text-black"
+                    style="background-color: lime !important; font-weight: 500; font-size: 18px;">Get Healthy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="container-fluid p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="container text-center pt-5 mt-5">
+            <h1 class="pt-5 fw-bold fs-1">28-Day <span style="color: lime;">Nutrition Plan</span></h1>
+            <p class="mt-3 text-white-50 fs-4 w-75 mx-auto">
+                Balanced meals, hydration, and portion control
+                for weight loss & muscle recovery. Every meal planned to fuel your transformation.
+            </p>
+        </div>
+        <!-- 🔹 Dynamic cards will be injected here -->
+        <div class="container-fluid">
+            <div id="daysRow" class="row mt-5"></div>
+        </div>
+    </div>
+    <!-- Modern Week Stepper -->
+    <div class="container my-5 pb-3">
+        <div class="week-stepper mx-auto position-relative">
+            <div class="progress bg-secondary">
+                <div class="progress-bar bg-success" id="weekProgress"></div>
+            </div>
+
+            <ul class="stepper list-unstyled d-flex justify-content-between mt-3">
+                <li class="step text-center flex-fill" data-week="1">
+                    <span class="circle">1</span>
+                    <small class="d-block mt-2 text-white-50">Week 1</small>
+                </li>
+                <li class="step text-center flex-fill" data-week="2">
+                    <span class="circle">2</span>
+                    <small class="d-block mt-2 text-white-50">Week 2</small>
+                </li>
+                <li class="step text-center flex-fill" data-week="3">
+                    <span class="circle">3</span>
+                    <small class="d-block mt-2 text-white-50">Week 3</small>
+                </li>
+                <li class="step text-center flex-fill" data-week="4">
+                    <span class="circle">4</span>
+                    <small class="d-block mt-2 text-white-50">Week 4</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const daysRow = document.getElementById('daysRow');
+    const steps = document.querySelectorAll('.week-stepper .step');
+    const progress = document.getElementById('weekProgress');
+
+    // Determine current day from URL if available
+    const params = new URLSearchParams(window.location.search);
+    const currentDay = parseInt(params.get('day')) || 1;
+    const currentWeek = Math.ceil(currentDay / 7);
+
+    let daysData = [];
+
+    fetch('../data/nutrition-plan.json')
+        .then(res => res.json())
+        .then(data => {
+            daysData = data.days;
+            renderWeek(currentWeek);
+        });
+
+    // Highlight week stepper and progress
+    function setActiveWeek(week) {
+        steps.forEach((s, i) => s.classList.toggle('active', i + 1 <= week));
+        const width = ((week - 1) / (steps.length - 1)) * 100;
+        progress.style.width = width + '%';
+    }
+
+    setActiveWeek(currentWeek);
+
+    steps.forEach(step => {
+        step.addEventListener('click', () => {
+            const week = parseInt(step.dataset.week, 10);
+            renderWeek(week);
+            setActiveWeek(week);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    function renderWeek(week) {
+        daysRow.innerHTML = '';
+
+        const weekDays = daysData.filter(d => d.week === week);
+
+        // Week title
+        daysRow.insertAdjacentHTML(
+            'beforeend',
+            `<div class="col-12 mb-4">
+                <h2 class="fw-bold fs-1 text-center my-4 pb-2 w-25 mx-auto"
+                style="border-bottom:2px solid lime; color: lime;">
+                  Week ${week}
+                </h2>
+            </div>`
+        );
+
+        // Insert day cards (without active day highlight)
+        weekDays.forEach(d => {
+            const card = `
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card bg-dark d-flex flex-column justify-content-center align-items-start rounded h-100 transition-card">
+                        <div class="ms-4 mt-3 mb-3">
+                            <h1 class="fs-3 mb-2" style="color: lime;">Day ${d.day}</h1>
+                            <span class="text-white-50">Daily meal plan</span>
+                        </div>
+                        <div class="p-2">
+                            <div class="py-2 mb-3 px-3 d-flex flex-column justify-content-center align-items-start bg-dark shadow-lg">
+                                <h3 class="fs-3" style="color: lime;">Breakfast</h3>
+                                <p class="text-white">${d.breakfast}</p>
+                            </div>
+                            <div class="py-2 mb-3 px-3 d-flex flex-column justify-content-center align-items-start bg-dark shadow-lg">
+                                <h3 class="fs-3" style="color: lime;">Lunch</h3>
+                                <p class="text-white">${d.lunch}</p>
+                            </div>
+                            <div class="py-2 mb-3 px-3 d-flex flex-column justify-content-center align-items-start bg-dark shadow-lg">
+                                <h3 class="fs-3" style="color: lime;">Dinner</h3>
+                                <p class="text-white">${d.dinner}</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-dark shadow-lg w-100 mb-3">View Details</a>
+                    </div>
+                </div>`;
+            daysRow.insertAdjacentHTML('beforeend', card);
+        });
+
+        // Smooth fade-in animation
+        document.querySelectorAll('.transition-card').forEach(c => {
+            c.style.opacity = 0;
+            setTimeout(() => {
+                c.style.transition = 'opacity 0.8s, transform 0.8s';
+                c.style.opacity = 1;
+                c.style.transform = 'translateY(0)';
+            }, 50);
+        });
+    }
+});
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const steps = document.querySelectorAll('.week-stepper .step');
+        const progress = document.getElementById('weekProgress');
+
+        // Determine current week from URL if available
+        const params = new URLSearchParams(window.location.search);
+        const dayNum = parseInt(params.get('day')) || 1;
+        const currentWeek = Math.ceil(dayNum / 7);
+
+        // Highlight current week and set progress width
+        setActiveWeek(currentWeek);
+
+        steps.forEach(step => {
+            step.addEventListener('click', () => {
+                const week = parseInt(step.dataset.week, 10);
+                const startDay = (week - 1) * 7 + 1;
+
+                fetch("../data/nutrition-plans.json")
+                    .then(res => res.json())
+                    .then(data => {
+                        const maxDay = Math.max(...data.days.map(d => d.day));
+                        if (startDay <= maxDay) {
+                            window.location.href = `index.html?day=${startDay}`;
+                        } else {
+                            // optional: show Bootstrap modal if week not available
+                            alert(`Week ${week} is not yet available.`);
+                        }
+                    });
+            });
+        });
+
+        function setActiveWeek(week) {
+            steps.forEach((s, i) => {
+                s.classList.toggle('active', i + 1 <= week);
+            });
+            // Progress width: 0–100% across 3 intervals
+            const width = ((week - 1) / (steps.length - 1)) * 100;
+            progress.style.width = width + '%';
+        }
+    });
+</script>
+
+</html>

@@ -15,7 +15,11 @@
 
 .nav-link:hover {
   color: limegreen;
+}
 
+.nav-link.active {
+  color: lime !important;
+  font-weight: 600;
 }
 
 .card-body h1 span {
@@ -41,3 +45,44 @@
     box-shadow: 0 0 10px 5px limegreen; /* lime glow */
     transform: translateY(-5px); /* optional lift effect */
 }
+
+.week-stepper {
+  max-width: 700px;
+}
+
+.week-stepper .progress {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.week-stepper .progress-bar {
+  transition: width 0.4s ease-in-out;
+}
+
+.week-stepper .stepper {
+  margin-top: -16px; /* pull circles over the progress bar */
+  position: relative;
+}
+
+.week-stepper .circle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #333;
+  border: 3px solid #666;
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.week-stepper .step.active .circle,
+.week-stepper .circle:hover {
+  background: lime;
+  border-color: lime;
+  color: #000;
+  box-shadow: 0 0 10px lime;
+}
+

@@ -1,0 +1,16 @@
+{
+  "currentWeightKg": "77kg",
+  "currentWeightLb":"169lb",
+  "leanBodyWeightKg": "60kg",
+  "leanBodyWeightLb": "132lb",
+  "fatPercent": "22%",
+  "fatMassKg": "17kg",
+  "fatMassLb": "37lb",
+  "bmr": "1450",
+  "targetWeightKg": "68kg",
+  "targetWeightLb": "68kg",
+  "dailyCalories": "1950 cal",
+  "carbs": "225 g",
+  "protein": "122 g",
+  "fat": "55 g"
+}
