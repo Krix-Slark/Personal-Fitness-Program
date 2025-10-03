@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout | Plan</title>
+    <title>Nutrition | Plan</title>
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/workout_plan.css">
@@ -156,6 +156,10 @@
                                 <h3 class="fs-3" style="color: lime;">Dinner</h3>
                                 <p class="text-white">${d.dinner}</p>
                             </div>
+                            <div class="py-2 mb-3 px-3 d-flex flex-column justify-content-center align-items-start bg-dark shadow-lg">
+                                <h3 class="fs-3" style="color: lime;">Snack</h3>
+                                <p class="text-white">${d.snack}</p>
+                            </div>
                         </div>
                         <a href="#" class="btn btn-dark shadow-lg w-100 mb-3">View Details</a>
                     </div>
@@ -194,12 +198,12 @@
                 const week = parseInt(step.dataset.week, 10);
                 const startDay = (week - 1) * 7 + 1;
 
-                fetch("../data/nutrition-plans.json")
+                fetch("../data/nutrition-plan.json")
                     .then(res => res.json())
                     .then(data => {
                         const maxDay = Math.max(...data.days.map(d => d.day));
                         if (startDay <= maxDay) {
-                            window.location.href = `index.html?day=${startDay}`;
+                            window.location.href = `nutritionplan.html?day=${startDay}`;
                         } else {
                             // optional: show Bootstrap modal if week not available
                             alert(`Week ${week} is not yet available.`);

@@ -3,198 +3,226 @@
     {
       "day": 1,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk +  1 banana",
+      "lunch": "3 chapati / 200g of rice + Chickpea masala curry",
+      "dinner": "3 chapati / 200g of rice + Chickpea masala curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 2,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "Toast + Peanut Butter",
+      "lunch": "3 chapati / 200g of rice + Tofu masala curry",
+      "dinner": "3 chapati / 200g of rice + Tofu masala curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 3,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk , Toast + Peanut Butter , 1 banana",
+      "lunch": "3 chapati / 200g of rice , Tofu + Chickpea masala curry",
+      "dinner": "2 chapati / 150g of rice , Tofu + Chickpea masala curry",
+      "snack" :"one hand portion of roasted chickpea + 50g of seeds"
     },
     {
       "day": 4,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "Whole apple + 1 cup of Soy Milk",
+      "lunch": "3 chapati / 200g of rice , Tofu + Dal Tadka curry",
+      "dinner": "3 chapati / 200g of rice , Tofu + Dal Tadka curry",
+      "snack" :"1 banana + one hand portion of roasted chickpea"
     },
     {
       "day": 5,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "2 eggs + Toast +  1 cup of Soy Milk",
+      "lunch": "3 chapati / 200g of rice + Tofu masala curry",
+      "dinner": "3 chapati / 200g of rice + 100 g of roasted chicken breast + Tofu masala curry",
+      "snack" :"1 banana + one hand portion of roasted chickpea"
     },
     {
       "day": 6,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 eggs + 1 or 2 chapati + any curry",
+      "lunch": "3 chapati / 200g of rice + Rajma masala curry",
+      "dinner": "2 chapati / 150g of rice , Rajma masala curry",
+      "snack" :" one hand portion of roasted chickpea + 50g of seeds"
     },
     {
       "day": 7,
       "week":1,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 or 2 chapati + any curry",
+      "lunch": "3 chapati / 200g of rice + Soya Chunk curry",
+      "dinner": "2 chapati / 150g of rice + Soya Chunk curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 8,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 50 g of cookies",
+      "lunch": "3 chapati / 200g of rice + Masoor Dal Tadka masala curry",
+      "dinner": "3 chapati / 200g of rice + Masoor Dal Tadka masala curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 9,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 banana + 1/2 of apple",
+      "lunch": "3 chapati / 200g of rice + Chickpea masala curry",
+      "dinner": "3 chapati / 200g of rice + Chickpea masala curry",
+      "snack" :"one hand portion of roasted chickpea"
     },
     {
       "day": 10,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "2 Toast + Peanut Butter + 1 cup of Soy Milk",
+      "lunch": "3 chapati / 200g of rice + Palak Tofu",
+      "dinner": "2 chapati / 150g of rice + Palak Tofu",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 11,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "2 eggs + Toast + Peanut Butter",
+      "lunch": "3 chapati / 200g of rice + Lobia curry",
+      "dinner": "3 chapati / 200g of rice + Lobia curry",
+      "snack" :"2 banana + one hand portion of roasted chickpea"
     },
     {
       "day": 12,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 1 egg",
+      "lunch": "3 chapati / 200g of rice + Chicken Tikka Masala curry",
+      "dinner": "3 chapati / 200g of rice + Chicken Tikka Masala curry",
+      "snack" :"50g of seeds + one hand portion of roasted chickpea"
     },
     {
       "day": 13,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 1 banana",
+      "lunch": "3 chapti / 150g of rice + Green Moong Dal curry",
+      "dinner": "2 chapti / 150g of rice + Green Moong Dal curry",
+      "snack" :"Whole apple + one hand portion of roasted chickpea"
     },
     {
       "day": 14,
       "week":2,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "2 banana",
+      "lunch": "2 chapati / 150g of rice + Mixed Bean curry",
+      "dinner": "2 chapati / 150g of rice + Mixed Bean curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 15,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk +  1 banana",
+      "lunch": "3 chapati / 200g of rice + Chickpea masala curry",
+      "dinner": "3 chapati / 200g of rice + Chickpea masala curry",
+      "snack" :"100g of cookies + one hand portion of roasted chickpea"
     },
     {
       "day": 16,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 50 g of cookies",
+      "lunch": "3 chapati / 200g of rice + Masoor Dal Tadka masala curry",
+      "dinner": "3 chapati / 200g of rice + Masoor Dal Tadka masala curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 17,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 or 2 chapati + any curry",
+      "lunch": "3 chapati / 200g of rice + Rajma masala curry",
+      "dinner": "2 chapati / 150g of rice , Rajma masala curry",
+      "snack" :" one hand portion of roasted chickpea + 50g of seeds"
     },
     {
       "day": 18,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "Toast + Peanut Butter + 2 eggs",
+      "lunch": "3 chapati / 200g of rice + Chicken Tikka Masala curry",
+      "dinner": "3 chapati / 200g of rice + Chicken Tikka Masala curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 19,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "2 eggs + Toast + Peanut Butter",
+      "lunch": "3 chapati / 200g of rice + Palak Tofu curry",
+      "dinner": "3 chapati / 200g of rice + Palak Tofu curry",
+      "snack" :"2 banana + one hand portion of roasted chickpea"
     },
     {
       "day": 20,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 or 2 chapati + any curry",
+      "lunch": "3 chapati / 200g of rice + Soya Chunk curry",
+      "dinner": "2 chapati / 150g of rice + Soya Chunk curry",
+      "snack" :"1/2 of apple + one hand portion of roasted chickpea"
     },
     {
       "day": 21,
       "week":3,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 1 banana",
+      "lunch": "3 chapti / 150g of rice + Green Moong Dal curry",
+      "dinner": "2 chapti / 150g of rice + Green Moong Dal curry",
+      "snack" :"Whole apple + one hand portion of roasted chickpea"
     },
     {
       "day": 22,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 50 g of cookies",
+      "lunch": "3 chapati / 200g of rice + Tofu masala curry",
+      "dinner": "3 chapati / 200g of rice + Tofu masala curry",
+      "snack" :"2 banana + one hand portion of roasted chickpea"
     },
     {
       "day": 23,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 or 2 chapati + any curry",
+      "lunch": "3 chapati / 200g of rice , Tofu + Chickpea masala curry",
+      "dinner": "3 chapati / 200g of rice + Tofu + Chickpea masala curry",
+      "snack" :"50g of seeds + one hand portion of roasted chickpea"
     },
     {
       "day": 24,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 cup of Soy Milk + 1 banana",
+      "lunch": "2 chapati / 150g of rice + Lobia curry",
+      "dinner": "2 chapati / 150g of rice + Lobia curry",
+      "snack" :"50 g of cookies + one hand portion of roasted chickpea"
     },
     {
       "day": 25,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "1 banana + 1 egg",
+      "lunch": "3 chapati / 200g of rice + Soya Chunk curry",
+      "dinner": "3 chapati / 200g of rice + Soya Chunk curry",
+      "snack" :"Whole Apple + one hand portion of roasted chickpea"
     },
     {
       "day": 26,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "2 eggs",
+      "lunch": "3 chapati / 200g of rice + Chicken Tikka Masala curry",
+      "dinner": "3 chapati / 200g of rice + Chicken Tikka Masala curry",
+      "snack" :"1 banana + one hand portion of roasted chickpea"
     },
     {
       "day": 27,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "Toast + Peanut Butter",
+      "lunch": "3 chapati / 200g of rice + Mixed Bean curry",
+      "dinner": "2 chapati / 150g of rice + Mixed Bean curry",
+      "snack" :"50g of cookies + one hand portion of roasted chickpea"
     },
     {
       "day": 28,
       "week":4,
-      "breakfast": "",
-      "lunch": "",
-      "dinner": ""
+      "breakfast": "Whole Apple",
+      "lunch": "3 chapati / 200g of rice + Tofu masala curry",
+      "dinner": "3 chapati / 200g of rice + Tofu masala curry",
+      "snack" :"one hand portion of roasted chickpea"
     }
   ]
 }
